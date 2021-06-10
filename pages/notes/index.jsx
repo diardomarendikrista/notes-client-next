@@ -42,7 +42,7 @@ export default function Notes() {
     );
   };
 
-  if (loading) return <Loading />
+  if (loading || Object.keys(profile).length === 0) return <Loading />
   return (
     <div>
       <div className={styles["note-container"]}>
