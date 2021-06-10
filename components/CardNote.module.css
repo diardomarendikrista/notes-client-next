@@ -1,0 +1,98 @@
+.btn-div {
+  position: absolute;
+  min-height: 50px;
+  right: 15px;
+  bottom: -5px;
+}
+
+.btn-delete,
+.btn-edit {
+  font-size: 30px;
+}
+
+.btn-delete:hover,
+.btn-edit:hover {
+  cursor: pointer;
+}
+
+.btn-delete {
+  color: #dd1616;
+}
+
+.btn-delete:hover {
+  color: #961111;
+}
+
+.btn-delete:active {
+  color: #dd1616;
+}
+
+.btn-edit {
+  color: #17a2b8;
+  margin-right: 5px;
+}
+
+.btn-edit:hover {
+  color: #0e5d6a;
+}
+
+.btn-edit:active {
+  color: #17a2b8;
+}
+
+.card-note {
+  width: 95%;
+  margin-bottom: 5px;
+  min-height: 180px;
+  transition: 200ms;
+}
+
+.card-note:hover {
+  background-color: azure;
+  /* margin-top: -3px;
+  padding-bottom: 3px; */
+  transition: 200ms;
+  cursor: pointer;
+}
+
+.card-note:active {
+  background-color: #fff;
+  margin-top: 0px;
+  padding-bottom: 0px;
+}
+
+.p-note {
+  margin: 0px;
+  padding: 0px;
+}
+
+.text-note-size {
+  max-height: 50px;
+  overflow: hidden;
+}
+
+.text-readmore {
+  position: absolute;
+  bottom: 10px;
+  color: #17a2b8;
+  cursor: pointer;
+}
+
+.text-readmore:hover {
+  font-size: 18px;
+}
+
+.text-readmore:active {
+  font-size: 16px;
+}
+
+.text-title {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 200ms;
+}
+
+.text-title:hover {
+  font-weight: bold;
+}
