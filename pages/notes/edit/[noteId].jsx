@@ -1,7 +1,8 @@
-import styles from '../index.module.css';
+import styles from "../index.module.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { updateNoteAsync, fetchNoteAsync } from "../../../store/actions/note";
 import Loading from "../../../components/Loading";
@@ -12,9 +13,9 @@ export default function NoteEdit() {
 
   const { noteId } = router.query;
 
-  const noteData = useSelector(state => state.note.note);
-  const loading = useSelector(state => state.note.loading);
-  const originPage = useSelector(state => state.note.originPage);
+  const noteData = useSelector((state) => state.note.note);
+  const loading = useSelector((state) => state.note.loading);
+  const originPage = useSelector((state) => state.note.originPage);
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
   const [tag, setTag] = useState("");
@@ -38,7 +39,7 @@ export default function NoteEdit() {
         router.push("/notes");
       }
     }
-  }
+  };
 
   const updateNote = async (event) => {
     event.preventDefault();
@@ -61,9 +62,15 @@ export default function NoteEdit() {
     router.push("/notes");
   };
 
-  if (loading || !noteData) return <Loading />
+  if (loading || !noteData) return <Loading />;
   return (
     <div className={styles.container2}>
+      <Head>
+        <meta charSet="utf-8" />
+        <title>Edit Note - Simple Note App</title>
+        <link rel="Note app" href="" />
+      </Head>
+
       <h3>
         <b>Edit Note</b>
       </h3>

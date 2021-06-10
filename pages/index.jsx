@@ -1,6 +1,7 @@
 import styles from "./index.module.css";
 import React, { useEffect } from "react";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 import { useSelector } from "react-redux";
 import { Container, Row, Col } from "react-bootstrap";
 import Login from "../components/Login";
@@ -19,6 +20,12 @@ export default function Home() {
 
   return (
     <Container fluid>
+      <Head>
+        <meta charSet="utf-8" />
+        <title>Simple Note App</title>
+        <link rel="Note app" href="" />
+      </Head>
+
       <div className={styles.home}>
         <Row>
           <Col lg>

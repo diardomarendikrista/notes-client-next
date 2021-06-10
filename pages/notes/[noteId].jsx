@@ -2,6 +2,7 @@ import styles from "./index.module.css";
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
+import Head from "next/head";
 import { Button } from "react-bootstrap";
 import { fetchNoteAsync, setOriginPage } from "../../store/actions/note";
 import Loading from "../../components/Loading";
@@ -44,6 +45,12 @@ export default function NoteDetail() {
   else
     return (
       <div className={styles.container2}>
+        <Head>
+          <meta charSet="utf-8" />
+          <title>Detail Note - Simple Note App</title>
+          <link rel="Note app" href="" />
+        </Head>
+
         <h3>
           <b>{capitalize(note.title)}</b>
         </h3>

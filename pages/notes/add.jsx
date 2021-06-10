@@ -1,7 +1,8 @@
-import styles from './index.module.css';
+import styles from "./index.module.css";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useRouter } from "next/router";
+import Head from 'next/head'
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { newNoteAsync } from "../../store/actions/note";
 
@@ -17,7 +18,7 @@ export default function NoteAdd() {
 
   const toHome = () => {
     router.push("/notes");
-  }
+  };
 
   const createNewNote = async (event) => {
     event.preventDefault();
@@ -34,6 +35,12 @@ export default function NoteAdd() {
 
   return (
     <div className={styles.container2}>
+      <Head>
+        <meta charSet="utf-8" />
+        <title>Add Note - Simple Note App</title>
+        <link rel="Note app" href="" />
+      </Head>
+
       <h3>
         <b>New Note</b>
       </h3>
