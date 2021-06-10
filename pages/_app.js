@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.min.css";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 import "../styles/globals.css";
 import { Provider } from "react-redux";
 import store from "../store/";

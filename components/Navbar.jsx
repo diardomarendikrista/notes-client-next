@@ -2,7 +2,6 @@ import styles from "./Navbar.module.css";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { Navbar, Nav, Form, NavDropdown } from "react-bootstrap";
-// import Logo from "../assets/img/logo.png";
 
 export default function Navibar() {
   const [menuHidden, setMenuHidden] = useState(true);
@@ -27,13 +26,13 @@ export default function Navibar() {
   return (
     <Navbar bg="info" variant="dark" className="navbar">
       <Navbar.Brand onClick={(event) => goHome(event)} href="/#">
-        {/* <img
+        <img
           alt=""
-          src={Logo}
+          src="/assets/img/logo.png"
           width="30"
           height="30"
           className="d-inline-block align-top"
-        />{" "} */}
+        />{" "}
         Simple Note App
       </Navbar.Brand>
       <Nav className="mr-auto"></Nav>

@@ -31,7 +31,7 @@ export default function CardNote({ note }) {
         <Card.Body>
           <div onClick={() => detailNote(note.id)}>
             <div>
-              <p className={styles["text-title"]}>{capitalize(note.title)}</p>
+              <p className={`${styles["text-title"]} text-left`}>{capitalize(note.title)}</p>
             </div>
             <div className={styles["text-note-size"]}>
               <p className={`${styles["p-note"]} text-left`}>{note.note}</p>

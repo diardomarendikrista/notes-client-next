@@ -4,12 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { BsFillPlusSquareFill } from "react-icons/bs";
 import CardNote from "../../components/CardNote";
+import Loading from "../../components/Loading";
+import capitalize from "../../helpers/capitalize";
 import { fetchNotes } from "../../store/actions/note";
 import { fetchProfile } from "../../store/actions/user";
 
 export default function Notes() {
   const profile = useSelector((state) => state.user.profile);
   const notes = useSelector((state) => state.note.notes);
+  const loading = useSelector((state) => state.note.loading);
 
   const router = useRouter();
   const dispatch = useDispatch();
@@ -39,11 +42,12 @@ export default function Notes() {
     );
   };
 
+  if (loading) return <Loading />
   return (
     <div>
       <div className={styles["note-container"]}>
         <div>
-          <h3 className={styles["title"]}>{profile.name}'s note</h3>
+          <h3 className={styles["title"]}>{capitalize(profile.name)}'s note</h3>
         </div>
         <div className={styles["add-btn"]}>
           <button onClick={() => addNote()} className="btn btn-primary">

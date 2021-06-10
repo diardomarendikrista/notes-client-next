@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useRouter } from "next/router";
 import { Form, Button, Col, Row } from "react-bootstrap";
 import { updateNoteAsync, fetchNoteAsync } from "../../../store/actions/note";
+import Loading from "../../../components/Loading";
 
 export default function NoteEdit() {
   const dispatch = useDispatch();
@@ -60,7 +61,7 @@ export default function NoteEdit() {
     router.push("/notes");
   };
 
-  if (loading || !noteData) return <h1>Loading...</h1>
+  if (loading || !noteData) return <Loading />
   return (
     <div className={styles.container2}>
       <h3>

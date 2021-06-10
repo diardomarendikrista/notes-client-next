@@ -19,6 +19,8 @@ export function setLoading(payload) {
 
 export function fetchNotes() {
   return async (dispatch) => {
+    dispatch(setNotes(""));
+    dispatch(setLoading(true));
     try {
       const headers = {
         access_token: localStorage.getItem("access_token"),
@@ -26,18 +28,20 @@ export function fetchNotes() {
       const { data } = await axios.get("/notes", { headers });
       // console.log(data);
       dispatch(setNotes(data));
+      dispatch(setLoading(false));
     } catch (error) {
       console.log(error.response);
       if (!error.response) connectionDown();
       else alertError("Error", error.response.data.message);
+      dispatch(setLoading(false));
     }
   };
 }
 
 export function fetchNoteAsync(id) {
   return async (dispatch) => {
-    dispatch(setNote(""));
     dispatch(setLoading(true));
+    dispatch(setNote({}));
     try {
       const headers = {
         access_token: localStorage.getItem("access_token"),
